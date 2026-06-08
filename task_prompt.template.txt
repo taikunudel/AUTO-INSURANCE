@@ -1,0 +1,26 @@
+You are {MODEL}
+Your harness is {HARNESS}
+Your thinking level is {THINKING}
+
+Work under {WORKSPACE}
+
+@{WORKSPACE}/plan_v5.md
+
+Implement this plan.
+
+ENVIRONMENT IS VERIFIED - RUN END-TO-END WITHOUT PAUSING:
+- Eval API: EVAL_API_URL is exported (default http://localhost:8765). Validate per plan
+  Section 1 (/healthz -> {"ok":true}; /datasets -> manifests), then proceed.
+- The spec is known-good; do not re-litigate. Run the FULL benchmark in one go; no
+  stopping at smoke tests / preflight / milestones.
+
+FOLDER NAMING - create the workspace folder named EXACTLY (lowercase, hyphens, no underscores):
+  run-{HARNESS}-{MODEL}-{THINKING}-run1-wiki{WIKI_VERSION}-<YYYYMMDD-HHMMSS>
+where <YYYYMMDD-HHMMSS> is the current UTC wall-clock at creation. RUN_INDEX and
+WIKI_VERSION are exported (the plan's seed reads RUN_INDEX). Do not change them.
+
+EXECUTION PROFILE:
+- Preflight passes once, then proceed without confirmation. Soft checks warn only.
+- Wall-clock 2-4h typical. Do not abort early.
+
+Start now. Create the folder, cd in, run preflight, launch the full benchmark.
