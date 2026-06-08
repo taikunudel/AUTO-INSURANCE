@@ -2,6 +2,9 @@
 run-*/
 failed-runs/
 v4-runs/
+_failed-*/
+_superseded-*/
+.current_run_dir
 audit/
 *.log
 
@@ -24,6 +27,7 @@ secrets/
 *.rds
 
 # ===== local config / OS cruft =====
+.env
 .claude/settings.local.json
 .DS_Store
 **/.DS_Store
