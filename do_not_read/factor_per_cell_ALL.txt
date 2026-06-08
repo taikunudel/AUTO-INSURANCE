@@ -1,0 +1,696 @@
+PER (run x dataset x model_type): the run's GLM-fix factors next to THAT cell's gini
+NOTE: maxit/mustart/warmstart are GLM-specific code choices; they only act on the
+tweedie_glm rows. They are shown on every row for reference but do not affect non-GLM cells.
+
+agent                      kb mxit must warm FIX | dataset        model         gini
+----------------------------------------------------------------------------------------
+clau-sonnet46_max-r1        -  200    Y    -   Y | fremtpl2       glm         +0.269 <GLM
+clau-sonnet46_max-r1        -  200    Y    -   Y | fremtpl2       gam         +0.300
+clau-sonnet46_max-r1        -  200    Y    -   Y | fremtpl2       grplasso    +0.240
+clau-sonnet46_max-r1        -  200    Y    -   Y | fremtpl2       grpnet      +0.240
+clau-sonnet46_max-r1        -  200    Y    -   Y | fremtpl2       tdboost     +0.330
+clau-sonnet46_max-r1        -  200    Y    -   Y | ausprivauto    glm         +0.186 <GLM
+clau-sonnet46_max-r1        -  200    Y    -   Y | ausprivauto    gam         +0.182
+clau-sonnet46_max-r1        -  200    Y    -   Y | ausprivauto    grplasso    +0.193
+clau-sonnet46_max-r1        -  200    Y    -   Y | ausprivauto    grpnet      +0.194
+clau-sonnet46_max-r1        -  200    Y    -   Y | ausprivauto    tdboost     +0.162
+clau-sonnet46_max-r1        -  200    Y    -   Y | auto_insurance glm         +0.438 <GLM
+clau-sonnet46_max-r1        -  200    Y    -   Y | auto_insurance gam         +0.439
+clau-sonnet46_max-r1        -  200    Y    -   Y | auto_insurance grplasso    +0.411
+clau-sonnet46_max-r1        -  200    Y    -   Y | auto_insurance grpnet      +0.414
+clau-sonnet46_max-r1        -  200    Y    -   Y | auto_insurance tdboost     +0.415
+clau-sonnet46_max-r1        -  200    Y    -   Y | bemtpl97       glm         +0.272 <GLM
+clau-sonnet46_max-r1        -  200    Y    -   Y | bemtpl97       gam         +0.295
+clau-sonnet46_max-r1        -  200    Y    -   Y | bemtpl97       grplasso    +0.284
+clau-sonnet46_max-r1        -  200    Y    -   Y | bemtpl97       grpnet      +0.284
+clau-sonnet46_max-r1        -  200    Y    -   Y | bemtpl97       tdboost     +0.262
+clau-sonnet46_max-r1        -  200    Y    -   Y | sgautonb       glm         +0.354 <GLM
+clau-sonnet46_max-r1        -  200    Y    -   Y | sgautonb       gam         +0.383
+clau-sonnet46_max-r1        -  200    Y    -   Y | sgautonb       grplasso    +0.361
+clau-sonnet46_max-r1        -  200    Y    -   Y | sgautonb       grpnet      +0.361
+clau-sonnet46_max-r1        -  200    Y    -   Y | sgautonb       tdboost     +0.364
+clau-sonnet46_max-r1        -  200    Y    -   Y | swautoins      glm         +0.843 <GLM
+clau-sonnet46_max-r1        -  200    Y    -   Y | swautoins      gam         +0.835
+clau-sonnet46_max-r1        -  200    Y    -   Y | swautoins      grplasso    +0.843
+clau-sonnet46_max-r1        -  200    Y    -   Y | swautoins      grpnet      +0.843
+clau-sonnet46_max-r1        -  200    Y    -   Y | swautoins      tdboost     +0.843
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | fremtpl2       glm         +0.258 <GLM
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | fremtpl2       gam         +0.300
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | fremtpl2       grplasso    +0.237
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | fremtpl2       grpnet      +0.237
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | fremtpl2       tdboost     +0.240
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | ausprivauto    glm         +0.179 <GLM
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | ausprivauto    gam         +0.185
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | ausprivauto    grplasso    +0.194
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | ausprivauto    grpnet      +0.195
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | ausprivauto    tdboost     +0.200
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | auto_insurance glm         +0.440 <GLM
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | auto_insurance gam         +0.441
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | auto_insurance grplasso    +0.411
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | auto_insurance grpnet      +0.410
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | auto_insurance tdboost     +0.436
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | bemtpl97       glm         +0.273 <GLM
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | bemtpl97       gam         +0.282
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | bemtpl97       grplasso    +0.284
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | bemtpl97       grpnet      +0.284
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | bemtpl97       tdboost     +0.302
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | sgautonb       glm         +0.354 <GLM
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | sgautonb       gam         +0.383
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | sgautonb       grplasso    +0.361
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | sgautonb       grpnet      +0.361
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | sgautonb       tdboost     +0.381
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | swautoins      glm         +0.829 <GLM
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | swautoins      gam         +0.835
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | swautoins      grplasso    +0.843
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | swautoins      grpnet      +0.843
+code-gpt5.5_extra-hig-r1    -  200    Y    -   Y | swautoins      tdboost     +0.843
+clau-opus47_max-r2          Y  100    -    Y   Y | fremtpl2       glm         +0.258 <GLM
+clau-opus47_max-r2          Y  100    -    Y   Y | fremtpl2       gam         +0.297
+clau-opus47_max-r2          Y  100    -    Y   Y | fremtpl2       grplasso    +0.269
+clau-opus47_max-r2          Y  100    -    Y   Y | fremtpl2       grpnet      +0.269
+clau-opus47_max-r2          Y  100    -    Y   Y | fremtpl2       tdboost     +0.178
+clau-opus47_max-r2          Y  100    -    Y   Y | ausprivauto    glm         +0.179 <GLM
+clau-opus47_max-r2          Y  100    -    Y   Y | ausprivauto    gam         +0.185
+clau-opus47_max-r2          Y  100    -    Y   Y | ausprivauto    grplasso    +0.201
+clau-opus47_max-r2          Y  100    -    Y   Y | ausprivauto    grpnet      +0.202
+clau-opus47_max-r2          Y  100    -    Y   Y | ausprivauto    tdboost     +0.198
+clau-opus47_max-r2          Y  100    -    Y   Y | auto_insurance glm         +0.440 <GLM
+clau-opus47_max-r2          Y  100    -    Y   Y | auto_insurance gam         +0.442
+clau-opus47_max-r2          Y  100    -    Y   Y | auto_insurance grplasso    +0.423
+clau-opus47_max-r2          Y  100    -    Y   Y | auto_insurance grpnet      +0.425
+clau-opus47_max-r2          Y  100    -    Y   Y | auto_insurance tdboost     +0.431
+clau-opus47_max-r2          Y  100    -    Y   Y | bemtpl97       glm         +0.273 <GLM
+clau-opus47_max-r2          Y  100    -    Y   Y | bemtpl97       gam         +0.282
+clau-opus47_max-r2          Y  100    -    Y   Y | bemtpl97       grplasso    +0.284
+clau-opus47_max-r2          Y  100    -    Y   Y | bemtpl97       grpnet      +0.285
+clau-opus47_max-r2          Y  100    -    Y   Y | bemtpl97       tdboost     +0.298
+clau-opus47_max-r2          Y  100    -    Y   Y | sgautonb       glm         +0.354 <GLM
+clau-opus47_max-r2          Y  100    -    Y   Y | sgautonb       gam         +0.379
+clau-opus47_max-r2          Y  100    -    Y   Y | sgautonb       grplasso    +0.362
+clau-opus47_max-r2          Y  100    -    Y   Y | sgautonb       grpnet      +0.363
+clau-opus47_max-r2          Y  100    -    Y   Y | sgautonb       tdboost     +0.382
+clau-opus47_max-r2          Y  100    -    Y   Y | swautoins      glm         +0.829 <GLM
+clau-opus47_max-r2          Y  100    -    Y   Y | swautoins      gam         +0.835
+clau-opus47_max-r2          Y  100    -    Y   Y | swautoins      grplasso    +0.829
+clau-opus47_max-r2          Y  100    -    Y   Y | swautoins      grpnet      +0.829
+clau-opus47_max-r2          Y  100    -    Y   Y | swautoins      tdboost     +0.843
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | fremtpl2       glm         +0.258 <GLM
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | fremtpl2       gam         +0.301
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | fremtpl2       grplasso    +0.261
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | fremtpl2       grpnet      +0.261
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | fremtpl2       tdboost     +0.260
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | ausprivauto    glm            NA  <GLM
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | ausprivauto    gam            NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | ausprivauto    grplasso       NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | ausprivauto    grpnet         NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | ausprivauto    tdboost        NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | auto_insurance glm            NA  <GLM
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | auto_insurance gam            NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | auto_insurance grplasso       NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | auto_insurance grpnet         NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | auto_insurance tdboost        NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | bemtpl97       glm            NA  <GLM
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | bemtpl97       gam            NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | bemtpl97       grplasso       NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | bemtpl97       grpnet         NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | bemtpl97       tdboost        NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | sgautonb       glm            NA  <GLM
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | sgautonb       gam            NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | sgautonb       grplasso       NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | sgautonb       grpnet         NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | sgautonb       tdboost        NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | swautoins      glm            NA  <GLM
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | swautoins      gam            NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | swautoins      grplasso       NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | swautoins      grpnet         NA 
+open-gpt5.5_xhigh-r2        Y   25    -    -   - | swautoins      tdboost        NA 
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | fremtpl2       glm         +0.258 <GLM
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | fremtpl2       gam         +0.297
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | fremtpl2       grplasso    +0.268
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | fremtpl2       grpnet      +0.268
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | fremtpl2       tdboost     +0.267
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | ausprivauto    glm         +0.176 <GLM
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | ausprivauto    gam         +0.183
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | ausprivauto    grplasso    +0.207
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | ausprivauto    grpnet      +0.209
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | ausprivauto    tdboost     +0.202
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | auto_insurance glm         +0.440 <GLM
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | auto_insurance gam         +0.441
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | auto_insurance grplasso    +0.419
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | auto_insurance grpnet      +0.421
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | auto_insurance tdboost     +0.432
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | bemtpl97       glm         +0.273 <GLM
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | bemtpl97       gam         +0.282
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | bemtpl97       grplasso    +0.284
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | bemtpl97       grpnet      +0.284
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | bemtpl97       tdboost     +0.297
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | sgautonb       glm         +0.354 <GLM
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | sgautonb       gam         +0.380
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | sgautonb       grplasso    +0.362
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | sgautonb       grpnet      +0.362
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | sgautonb       tdboost     +0.387
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | swautoins      glm         +0.829 <GLM
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | swautoins      gam         +0.835
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | swautoins      grplasso    +0.829
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | swautoins      grpnet      +0.828
+code-gpt55_extra_high-r1    Y  200    Y    -   Y | swautoins      tdboost     +0.843
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | fremtpl2       glm         +0.258 <GLM
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | fremtpl2       gam         +0.297
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | fremtpl2       grplasso    +0.268
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | fremtpl2       grpnet      +0.268
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | fremtpl2       tdboost     +0.267
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | ausprivauto    glm         +0.179 <GLM
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | ausprivauto    gam         +0.185
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | ausprivauto    grplasso    +0.208
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | ausprivauto    grpnet      +0.209
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | ausprivauto    tdboost     +0.202
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | auto_insurance glm         +0.440 <GLM
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | auto_insurance gam         +0.442
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | auto_insurance grplasso    +0.419
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | auto_insurance grpnet      +0.422
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | auto_insurance tdboost     +0.431
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | bemtpl97       glm         +0.273 <GLM
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | bemtpl97       gam         +0.284
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | bemtpl97       grplasso    +0.284
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | bemtpl97       grpnet      +0.284
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | bemtpl97       tdboost     +0.297
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | sgautonb       glm         +0.354 <GLM
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | sgautonb       gam         +0.384
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | sgautonb       grplasso    +0.363
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | sgautonb       grpnet      +0.363
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | sgautonb       tdboost     +0.387
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | swautoins      glm         +0.829 <GLM
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | swautoins      gam         +0.835
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | swautoins      grplasso    +0.829
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | swautoins      grpnet      +0.828
+gemi-gemini35flash_hi-r1    Y  200    Y    -   Y | swautoins      tdboost     +0.843
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | fremtpl2       glm         +0.258 <GLM
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | fremtpl2       gam         +0.299
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | fremtpl2       grplasso    +0.238
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | fremtpl2       grpnet      +0.238
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | fremtpl2       tdboost     +0.252
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | ausprivauto    glm         +0.179 <GLM
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | ausprivauto    gam         +0.185
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | ausprivauto    grplasso    +0.202
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | ausprivauto    grpnet      +0.202
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | ausprivauto    tdboost     +0.197
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | auto_insurance glm         +0.440 <GLM
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | auto_insurance gam         +0.442
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | auto_insurance grplasso    +0.412
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | auto_insurance grpnet      +0.411
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | auto_insurance tdboost     +0.434
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | bemtpl97       glm         +0.273 <GLM
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | bemtpl97       gam         +0.277
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | bemtpl97       grplasso    +0.285
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | bemtpl97       grpnet      +0.287
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | bemtpl97       tdboost     +0.301
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | sgautonb       glm         +0.354 <GLM
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | sgautonb       gam         +0.382
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | sgautonb       grplasso    +0.360
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | sgautonb       grpnet      +0.361
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | sgautonb       tdboost     +0.385
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | swautoins      glm         +0.829 <GLM
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | swautoins      gam         +0.840
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | swautoins      grplasso    +0.843
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | swautoins      grpnet      +0.843
+code-gpt5.4_extra-hig-r1    -  100    Y    -   Y | swautoins      tdboost     +0.843
+clau-opus47_max-r2          -  200    Y    -   Y | fremtpl2       glm         +0.256 <GLM
+clau-opus47_max-r2          -  200    Y    -   Y | fremtpl2       gam         +0.299
+clau-opus47_max-r2          -  200    Y    -   Y | fremtpl2       grplasso    +0.268
+clau-opus47_max-r2          -  200    Y    -   Y | fremtpl2       grpnet      +0.268
+clau-opus47_max-r2          -  200    Y    -   Y | fremtpl2       tdboost     +0.223
+clau-opus47_max-r2          -  200    Y    -   Y | ausprivauto    glm         +0.179 <GLM
+clau-opus47_max-r2          -  200    Y    -   Y | ausprivauto    gam         +0.182
+clau-opus47_max-r2          -  200    Y    -   Y | ausprivauto    grplasso    +0.201
+clau-opus47_max-r2          -  200    Y    -   Y | ausprivauto    grpnet      +0.202
+clau-opus47_max-r2          -  200    Y    -   Y | ausprivauto    tdboost     +0.197
+clau-opus47_max-r2          -  200    Y    -   Y | auto_insurance glm         +0.440 <GLM
+clau-opus47_max-r2          -  200    Y    -   Y | auto_insurance gam         +0.441
+clau-opus47_max-r2          -  200    Y    -   Y | auto_insurance grplasso    +0.426
+clau-opus47_max-r2          -  200    Y    -   Y | auto_insurance grpnet      +0.427
+clau-opus47_max-r2          -  200    Y    -   Y | auto_insurance tdboost     +0.430
+clau-opus47_max-r2          -  200    Y    -   Y | bemtpl97       glm         +0.273 <GLM
+clau-opus47_max-r2          -  200    Y    -   Y | bemtpl97       gam         +0.295
+clau-opus47_max-r2          -  200    Y    -   Y | bemtpl97       grplasso    +0.284
+clau-opus47_max-r2          -  200    Y    -   Y | bemtpl97       grpnet      +0.285
+clau-opus47_max-r2          -  200    Y    -   Y | bemtpl97       tdboost     +0.301
+clau-opus47_max-r2          -  200    Y    -   Y | sgautonb       glm         +0.354 <GLM
+clau-opus47_max-r2          -  200    Y    -   Y | sgautonb       gam         +0.383
+clau-opus47_max-r2          -  200    Y    -   Y | sgautonb       grplasso    +0.362
+clau-opus47_max-r2          -  200    Y    -   Y | sgautonb       grpnet      +0.363
+clau-opus47_max-r2          -  200    Y    -   Y | sgautonb       tdboost     +0.385
+clau-opus47_max-r2          -  200    Y    -   Y | swautoins      glm         +0.843 <GLM
+clau-opus47_max-r2          -  200    Y    -   Y | swautoins      gam         +0.843
+clau-opus47_max-r2          -  200    Y    -   Y | swautoins      grplasso    +0.843
+clau-opus47_max-r2          -  200    Y    -   Y | swautoins      grpnet      +0.843
+clau-opus47_max-r2          -  200    Y    -   Y | swautoins      tdboost     +0.843
+clau-sonnet46_max-r2        Y  100    Y    -   Y | fremtpl2       glm         +0.049 <GLM
+clau-sonnet46_max-r2        Y  100    Y    -   Y | fremtpl2       gam         +0.300
+clau-sonnet46_max-r2        Y  100    Y    -   Y | fremtpl2       grplasso    +0.266
+clau-sonnet46_max-r2        Y  100    Y    -   Y | fremtpl2       grpnet      +0.265
+clau-sonnet46_max-r2        Y  100    Y    -   Y | fremtpl2       tdboost     +0.260
+clau-sonnet46_max-r2        Y  100    Y    -   Y | ausprivauto    glm         -0.135 <GLM
+clau-sonnet46_max-r2        Y  100    Y    -   Y | ausprivauto    gam         +0.185
+clau-sonnet46_max-r2        Y  100    Y    -   Y | ausprivauto    grplasso    +0.206
+clau-sonnet46_max-r2        Y  100    Y    -   Y | ausprivauto    grpnet      +0.204
+clau-sonnet46_max-r2        Y  100    Y    -   Y | ausprivauto    tdboost     +0.201
+clau-sonnet46_max-r2        Y  100    Y    -   Y | auto_insurance glm         +0.439 <GLM
+clau-sonnet46_max-r2        Y  100    Y    -   Y | auto_insurance gam         +0.441
+clau-sonnet46_max-r2        Y  100    Y    -   Y | auto_insurance grplasso    +0.415
+clau-sonnet46_max-r2        Y  100    Y    -   Y | auto_insurance grpnet      +0.416
+clau-sonnet46_max-r2        Y  100    Y    -   Y | auto_insurance tdboost     +0.431
+clau-sonnet46_max-r2        Y  100    Y    -   Y | bemtpl97       glm         +0.258 <GLM
+clau-sonnet46_max-r2        Y  100    Y    -   Y | bemtpl97       gam         +0.269
+clau-sonnet46_max-r2        Y  100    Y    -   Y | bemtpl97       grplasso    +0.264
+clau-sonnet46_max-r2        Y  100    Y    -   Y | bemtpl97       grpnet      +0.265
+clau-sonnet46_max-r2        Y  100    Y    -   Y | bemtpl97       tdboost     +0.295
+clau-sonnet46_max-r2        Y  100    Y    -   Y | sgautonb       glm         +0.343 <GLM
+clau-sonnet46_max-r2        Y  100    Y    -   Y | sgautonb       gam         +0.378
+clau-sonnet46_max-r2        Y  100    Y    -   Y | sgautonb       grplasso    +0.350
+clau-sonnet46_max-r2        Y  100    Y    -   Y | sgautonb       grpnet      +0.351
+clau-sonnet46_max-r2        Y  100    Y    -   Y | sgautonb       tdboost     +0.385
+clau-sonnet46_max-r2        Y  100    Y    -   Y | swautoins      glm         +0.843 <GLM
+clau-sonnet46_max-r2        Y  100    Y    -   Y | swautoins      gam         +0.843
+clau-sonnet46_max-r2        Y  100    Y    -   Y | swautoins      grplasso    +0.843
+clau-sonnet46_max-r2        Y  100    Y    -   Y | swautoins      grpnet      +0.843
+clau-sonnet46_max-r2        Y  100    Y    -   Y | swautoins      tdboost     +0.843
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | fremtpl2       glm         +0.025 <GLM
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | fremtpl2       gam         +0.300
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | fremtpl2       grplasso    +0.266
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | fremtpl2       grpnet      +0.266
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | fremtpl2       tdboost     +0.260
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | ausprivauto    glm         +0.179 <GLM
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | ausprivauto    gam         +0.185
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | ausprivauto    grplasso    +0.206
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | ausprivauto    grpnet      +0.204
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | ausprivauto    tdboost     +0.201
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | auto_insurance glm         +0.440 <GLM
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | auto_insurance gam         +0.441
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | auto_insurance grplasso    +0.415
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | auto_insurance grpnet      +0.416
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | auto_insurance tdboost     +0.431
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | bemtpl97       glm         +0.273 <GLM
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | bemtpl97       gam         +0.284
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | bemtpl97       grplasso    +0.284
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | bemtpl97       grpnet      +0.284
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | bemtpl97       tdboost     +0.295
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | sgautonb       glm         +0.354 <GLM
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | sgautonb       gam         +0.383
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | sgautonb       grplasso    +0.362
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | sgautonb       grpnet      +0.363
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | sgautonb       tdboost     +0.385
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | swautoins      glm         +0.829 <GLM
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | swautoins      gam         +0.835
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | swautoins      grplasso    +0.829
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | swautoins      grpnet      +0.829
+open-gpt5.5_xhigh-r1        Y  200    -    -   - | swautoins      tdboost     +0.843
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | fremtpl2       glm         -0.003 <GLM
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | fremtpl2       gam         +0.283
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | fremtpl2       grplasso    +0.246
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | fremtpl2       grpnet      +0.243
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | fremtpl2       tdboost     +0.207
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | ausprivauto    gam         +0.184
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | ausprivauto    grplasso    +0.202
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | ausprivauto    grpnet      +0.202
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | ausprivauto    tdboost     +0.188
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | auto_insurance glm         +0.440 <GLM
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | auto_insurance gam         +0.442
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | auto_insurance grplasso    +0.411
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | auto_insurance grpnet      +0.407
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | auto_insurance tdboost     +0.432
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | bemtpl97       gam         +0.280
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | bemtpl97       grplasso    +0.284
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | bemtpl97       grpnet      +0.284
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | bemtpl97       tdboost     +0.294
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | sgautonb       glm         +0.354 <GLM
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | sgautonb       gam         +0.384
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | sgautonb       grplasso    +0.364
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | sgautonb       grpnet      +0.364
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | sgautonb       tdboost     +0.387
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | swautoins      glm         +0.829 <GLM
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | swautoins      gam         +0.835
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | swautoins      grplasso    +0.828
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | swautoins      grpnet      +0.828
+code-gpt5.4_extra-hig-r1    Y   25    -    -   - | swautoins      tdboost     +0.843
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | fremtpl2       glm         -0.174 <GLM
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | fremtpl2       gam         +0.298
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | fremtpl2       grplasso    +0.272
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | fremtpl2       grpnet      +0.272
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | fremtpl2       tdboost     +0.243
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | ausprivauto    gam         +0.185
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | ausprivauto    grplasso    +0.203
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | ausprivauto    grpnet      +0.204
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | ausprivauto    tdboost     +0.201
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | auto_insurance glm         +0.440 <GLM
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | auto_insurance gam         +0.439
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | auto_insurance grplasso    +0.418
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | auto_insurance grpnet      +0.419
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | auto_insurance tdboost     +0.429
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | bemtpl97       gam         +0.279
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | bemtpl97       grplasso    +0.283
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | bemtpl97       grpnet      +0.284
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | bemtpl97       tdboost     +0.296
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | sgautonb       glm         +0.354 <GLM
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | sgautonb       gam         +0.345
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | sgautonb       grplasso    +0.363
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | sgautonb       grpnet      +0.364
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | sgautonb       tdboost     +0.386
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | swautoins      glm         +0.829 <GLM
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | swautoins      gam         +0.831
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | swautoins      grplasso    +0.829
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | swautoins      grpnet      +0.828
+code-gpt5.3-codex_ext-r1    Y   25    -    -   - | swautoins      tdboost     +0.843
+clau-opus47_max-r1          Y  100    -    -   - | fremtpl2       glm         -0.207 <GLM
+clau-opus47_max-r1          Y  100    -    -   - | fremtpl2       gam         +0.300
+clau-opus47_max-r1          Y  100    -    -   - | fremtpl2       grplasso    +0.265
+clau-opus47_max-r1          Y  100    -    -   - | fremtpl2       grpnet      +0.264
+clau-opus47_max-r1          Y  100    -    -   - | fremtpl2       tdboost     +0.267
+clau-opus47_max-r1          Y  100    -    -   - | ausprivauto    glm         +0.179 <GLM
+clau-opus47_max-r1          Y  100    -    -   - | ausprivauto    gam         +0.185
+clau-opus47_max-r1          Y  100    -    -   - | ausprivauto    grplasso    +0.209
+clau-opus47_max-r1          Y  100    -    -   - | ausprivauto    grpnet      +0.207
+clau-opus47_max-r1          Y  100    -    -   - | ausprivauto    tdboost     +0.202
+clau-opus47_max-r1          Y  100    -    -   - | auto_insurance glm         +0.440 <GLM
+clau-opus47_max-r1          Y  100    -    -   - | auto_insurance gam         +0.441
+clau-opus47_max-r1          Y  100    -    -   - | auto_insurance grplasso    +0.420
+clau-opus47_max-r1          Y  100    -    -   - | auto_insurance grpnet      +0.423
+clau-opus47_max-r1          Y  100    -    -   - | auto_insurance tdboost     +0.432
+clau-opus47_max-r1          Y  100    -    -   - | bemtpl97       glm         +0.273 <GLM
+clau-opus47_max-r1          Y  100    -    -   - | bemtpl97       gam         +0.284
+clau-opus47_max-r1          Y  100    -    -   - | bemtpl97       grplasso    +0.283
+clau-opus47_max-r1          Y  100    -    -   - | bemtpl97       grpnet      +0.284
+clau-opus47_max-r1          Y  100    -    -   - | bemtpl97       tdboost     +0.297
+clau-opus47_max-r1          Y  100    -    -   - | sgautonb       glm         +0.354 <GLM
+clau-opus47_max-r1          Y  100    -    -   - | sgautonb       gam         +0.383
+clau-opus47_max-r1          Y  100    -    -   - | sgautonb       grplasso    +0.362
+clau-opus47_max-r1          Y  100    -    -   - | sgautonb       grpnet      +0.362
+clau-opus47_max-r1          Y  100    -    -   - | sgautonb       tdboost     +0.387
+clau-opus47_max-r1          Y  100    -    -   - | swautoins      glm         +0.829 <GLM
+clau-opus47_max-r1          Y  100    -    -   - | swautoins      gam         +0.835
+clau-opus47_max-r1          Y  100    -    -   - | swautoins      grplasso    +0.829
+clau-opus47_max-r1          Y  100    -    -   - | swautoins      grpnet      +0.828
+clau-opus47_max-r1          Y  100    -    -   - | swautoins      tdboost     +0.843
+clau-opus47_max-r1          -  100    -    -   - | fremtpl2       glm         -0.207 <GLM
+clau-opus47_max-r1          -  100    -    -   - | fremtpl2       gam         +0.300
+clau-opus47_max-r1          -  100    -    -   - | fremtpl2       grplasso    +0.085
+clau-opus47_max-r1          -  100    -    -   - | fremtpl2       grpnet      +0.086
+clau-opus47_max-r1          -  100    -    -   - | fremtpl2       tdboost     +0.184
+clau-opus47_max-r1          -  100    -    -   - | ausprivauto    glm         +0.179 <GLM
+clau-opus47_max-r1          -  100    -    -   - | ausprivauto    gam         +0.185
+clau-opus47_max-r1          -  100    -    -   - | ausprivauto    grplasso    +0.209
+clau-opus47_max-r1          -  100    -    -   - | ausprivauto    grpnet      +0.204
+clau-opus47_max-r1          -  100    -    -   - | ausprivauto    tdboost     +0.192
+clau-opus47_max-r1          -  100    -    -   - | auto_insurance glm         +0.440 <GLM
+clau-opus47_max-r1          -  100    -    -   - | auto_insurance gam         +0.441
+clau-opus47_max-r1          -  100    -    -   - | auto_insurance grplasso    +0.109
+clau-opus47_max-r1          -  100    -    -   - | auto_insurance grpnet      +0.109
+clau-opus47_max-r1          -  100    -    -   - | auto_insurance tdboost     +0.426
+clau-opus47_max-r1          -  100    -    -   - | bemtpl97       glm         +0.273 <GLM
+clau-opus47_max-r1          -  100    -    -   - | bemtpl97       gam         +0.284
+clau-opus47_max-r1          -  100    -    -   - | bemtpl97       grplasso    +0.295
+clau-opus47_max-r1          -  100    -    -   - | bemtpl97       grpnet      +0.295
+clau-opus47_max-r1          -  100    -    -   - | bemtpl97       tdboost     +0.294
+clau-opus47_max-r1          -  100    -    -   - | sgautonb       glm         +0.354 <GLM
+clau-opus47_max-r1          -  100    -    -   - | sgautonb       gam         +0.383
+clau-opus47_max-r1          -  100    -    -   - | sgautonb       grplasso    +0.360
+clau-opus47_max-r1          -  100    -    -   - | sgautonb       grpnet      +0.359
+clau-opus47_max-r1          -  100    -    -   - | sgautonb       tdboost     +0.380
+clau-opus47_max-r1          -  100    -    -   - | swautoins      glm         +0.829 <GLM
+clau-opus47_max-r1          -  100    -    -   - | swautoins      gam         +0.835
+clau-opus47_max-r1          -  100    -    -   - | swautoins      grplasso    +0.842
+clau-opus47_max-r1          -  100    -    -   - | swautoins      grpnet      +0.842
+clau-opus47_max-r1          -  100    -    -   - | swautoins      tdboost     +0.843
+clau-sonnet46_max-r1        Y   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+clau-sonnet46_max-r1        Y   25    -    -   - | fremtpl2       gam         +0.300
+clau-sonnet46_max-r1        Y   25    -    -   - | fremtpl2       grplasso    +0.268
+clau-sonnet46_max-r1        Y   25    -    -   - | fremtpl2       grpnet      +0.268
+clau-sonnet46_max-r1        Y   25    -    -   - | fremtpl2       tdboost     +0.267
+clau-sonnet46_max-r1        Y   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+clau-sonnet46_max-r1        Y   25    -    -   - | ausprivauto    gam         +0.185
+clau-sonnet46_max-r1        Y   25    -    -   - | ausprivauto    grplasso    +0.208
+clau-sonnet46_max-r1        Y   25    -    -   - | ausprivauto    grpnet      +0.208
+clau-sonnet46_max-r1        Y   25    -    -   - | ausprivauto    tdboost     +0.202
+clau-sonnet46_max-r1        Y   25    -    -   - | auto_insurance glm         +0.440 <GLM
+clau-sonnet46_max-r1        Y   25    -    -   - | auto_insurance gam         +0.441
+clau-sonnet46_max-r1        Y   25    -    -   - | auto_insurance grplasso    +0.422
+clau-sonnet46_max-r1        Y   25    -    -   - | auto_insurance grpnet      +0.423
+clau-sonnet46_max-r1        Y   25    -    -   - | auto_insurance tdboost     +0.432
+clau-sonnet46_max-r1        Y   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+clau-sonnet46_max-r1        Y   25    -    -   - | bemtpl97       gam         +0.284
+clau-sonnet46_max-r1        Y   25    -    -   - | bemtpl97       grplasso    +0.284
+clau-sonnet46_max-r1        Y   25    -    -   - | bemtpl97       grpnet      +0.284
+clau-sonnet46_max-r1        Y   25    -    -   - | bemtpl97       tdboost     +0.297
+clau-sonnet46_max-r1        Y   25    -    -   - | sgautonb       glm         +0.354 <GLM
+clau-sonnet46_max-r1        Y   25    -    -   - | sgautonb       gam            NA 
+clau-sonnet46_max-r1        Y   25    -    -   - | sgautonb       grplasso    +0.362
+clau-sonnet46_max-r1        Y   25    -    -   - | sgautonb       grpnet      +0.362
+clau-sonnet46_max-r1        Y   25    -    -   - | sgautonb       tdboost     +0.387
+clau-sonnet46_max-r1        Y   25    -    -   - | swautoins      glm         +0.829 <GLM
+clau-sonnet46_max-r1        Y   25    -    -   - | swautoins      gam         +0.835
+clau-sonnet46_max-r1        Y   25    -    -   - | swautoins      grplasso    +0.829
+clau-sonnet46_max-r1        Y   25    -    -   - | swautoins      grpnet      +0.829
+clau-sonnet46_max-r1        Y   25    -    -   - | swautoins      tdboost     +0.843
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | fremtpl2       gam         +0.299
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | fremtpl2       grplasso    +0.268
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | fremtpl2       grpnet      +0.268
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | fremtpl2       tdboost     +0.267
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | ausprivauto    gam         +0.185
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | ausprivauto    grplasso    +0.208
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | ausprivauto    grpnet      +0.209
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | ausprivauto    tdboost     +0.202
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | auto_insurance glm         +0.440 <GLM
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | auto_insurance gam         +0.441
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | auto_insurance grplasso    +0.419
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | auto_insurance grpnet      +0.422
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | auto_insurance tdboost     +0.431
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | bemtpl97       gam         +0.276
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | bemtpl97       grplasso    +0.284
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | bemtpl97       grpnet      +0.284
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | bemtpl97       tdboost     +0.297
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | sgautonb       glm         +0.354 <GLM
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | sgautonb       gam            NA 
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | sgautonb       grplasso    +0.363
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | sgautonb       grpnet      +0.363
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | sgautonb       tdboost     +0.387
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | swautoins      glm         +0.829 <GLM
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | swautoins      gam         +0.830
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | swautoins      grplasso    +0.829
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | swautoins      grpnet      +0.828
+gemi-gemini3.1pro_hig-r1    Y   25    -    -   - | swautoins      tdboost     +0.843
+open-gemini35flash_hi-r1    Y   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+open-gemini35flash_hi-r1    Y   25    -    -   - | fremtpl2       gam         +0.300
+open-gemini35flash_hi-r1    Y   25    -    -   - | fremtpl2       grplasso    +0.263
+open-gemini35flash_hi-r1    Y   25    -    -   - | fremtpl2       grpnet      +0.263
+open-gemini35flash_hi-r1    Y   25    -    -   - | fremtpl2       tdboost     +0.260
+open-gemini35flash_hi-r1    Y   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+open-gemini35flash_hi-r1    Y   25    -    -   - | ausprivauto    gam         +0.185
+open-gemini35flash_hi-r1    Y   25    -    -   - | ausprivauto    grplasso    +0.201
+open-gemini35flash_hi-r1    Y   25    -    -   - | ausprivauto    grpnet      +0.200
+open-gemini35flash_hi-r1    Y   25    -    -   - | ausprivauto    tdboost     +0.201
+open-gemini35flash_hi-r1    Y   25    -    -   - | auto_insurance glm         +0.440 <GLM
+open-gemini35flash_hi-r1    Y   25    -    -   - | auto_insurance gam         +0.441
+open-gemini35flash_hi-r1    Y   25    -    -   - | auto_insurance grplasso    +0.422
+open-gemini35flash_hi-r1    Y   25    -    -   - | auto_insurance grpnet      +0.425
+open-gemini35flash_hi-r1    Y   25    -    -   - | auto_insurance tdboost     +0.430
+open-gemini35flash_hi-r1    Y   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+open-gemini35flash_hi-r1    Y   25    -    -   - | bemtpl97       gam         +0.284
+open-gemini35flash_hi-r1    Y   25    -    -   - | bemtpl97       grplasso    +0.283
+open-gemini35flash_hi-r1    Y   25    -    -   - | bemtpl97       grpnet      +0.284
+open-gemini35flash_hi-r1    Y   25    -    -   - | bemtpl97       tdboost     +0.295
+open-gemini35flash_hi-r1    Y   25    -    -   - | sgautonb       glm         +0.354 <GLM
+open-gemini35flash_hi-r1    Y   25    -    -   - | sgautonb       gam         +0.383
+open-gemini35flash_hi-r1    Y   25    -    -   - | sgautonb       grplasso    +0.362
+open-gemini35flash_hi-r1    Y   25    -    -   - | sgautonb       grpnet      +0.363
+open-gemini35flash_hi-r1    Y   25    -    -   - | sgautonb       tdboost     +0.385
+open-gemini35flash_hi-r1    Y   25    -    -   - | swautoins      glm         +0.829 <GLM
+open-gemini35flash_hi-r1    Y   25    -    -   - | swautoins      gam         +0.835
+open-gemini35flash_hi-r1    Y   25    -    -   - | swautoins      grplasso    +0.828
+open-gemini35flash_hi-r1    Y   25    -    -   - | swautoins      grpnet      +0.827
+open-gemini35flash_hi-r1    Y   25    -    -   - | swautoins      tdboost     +0.843
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | fremtpl2       gam         +0.301
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | fremtpl2       grplasso    +0.235
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | fremtpl2       grpnet      +0.236
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | fremtpl2       tdboost     +0.311
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | ausprivauto    gam         +0.181
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | ausprivauto    grplasso    +0.194
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | ausprivauto    grpnet      +0.196
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | ausprivauto    tdboost     +0.191
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | auto_insurance glm         +0.440 <GLM
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | auto_insurance gam            NA 
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | auto_insurance grplasso    +0.413
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | auto_insurance grpnet      +0.412
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | auto_insurance tdboost     +0.422
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | bemtpl97       gam         +0.295
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | bemtpl97       grplasso    +0.283
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | bemtpl97       grpnet      +0.284
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | bemtpl97       tdboost     +0.288
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | sgautonb       glm         +0.354 <GLM
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | sgautonb       gam            NA 
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | sgautonb       grplasso    +0.361
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | sgautonb       grpnet      +0.361
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | sgautonb       tdboost     +0.380
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | swautoins      glm         +0.829 <GLM
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | swautoins      gam         +0.842
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | swautoins      grplasso    +0.843
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | swautoins      grpnet      +0.843
+code-gpt5.3_extra-hig-r1    -   25    -    -   - | swautoins      tdboost     +0.843
+gemi-flash3.5_high-r1       -   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+gemi-flash3.5_high-r1       -   25    -    -   - | fremtpl2       gam         +0.300
+gemi-flash3.5_high-r1       -   25    -    -   - | fremtpl2       grplasso    +0.265
+gemi-flash3.5_high-r1       -   25    -    -   - | fremtpl2       grpnet      +0.264
+gemi-flash3.5_high-r1       -   25    -    -   - | fremtpl2       tdboost     +0.266
+gemi-flash3.5_high-r1       -   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+gemi-flash3.5_high-r1       -   25    -    -   - | ausprivauto    gam         +0.185
+gemi-flash3.5_high-r1       -   25    -    -   - | ausprivauto    grplasso    +0.209
+gemi-flash3.5_high-r1       -   25    -    -   - | ausprivauto    grpnet      +0.206
+gemi-flash3.5_high-r1       -   25    -    -   - | ausprivauto    tdboost     +0.201
+gemi-flash3.5_high-r1       -   25    -    -   - | auto_insurance glm         +0.440 <GLM
+gemi-flash3.5_high-r1       -   25    -    -   - | auto_insurance gam         +0.443
+gemi-flash3.5_high-r1       -   25    -    -   - | auto_insurance grplasso    +0.421
+gemi-flash3.5_high-r1       -   25    -    -   - | auto_insurance grpnet      +0.425
+gemi-flash3.5_high-r1       -   25    -    -   - | auto_insurance tdboost     +0.435
+gemi-flash3.5_high-r1       -   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+gemi-flash3.5_high-r1       -   25    -    -   - | bemtpl97       gam         +0.284
+gemi-flash3.5_high-r1       -   25    -    -   - | bemtpl97       grplasso    +0.283
+gemi-flash3.5_high-r1       -   25    -    -   - | bemtpl97       grpnet      +0.284
+gemi-flash3.5_high-r1       -   25    -    -   - | bemtpl97       tdboost     +0.301
+gemi-flash3.5_high-r1       -   25    -    -   - | sgautonb       glm         +0.354 <GLM
+gemi-flash3.5_high-r1       -   25    -    -   - | sgautonb       gam         +0.345
+gemi-flash3.5_high-r1       -   25    -    -   - | sgautonb       grplasso    +0.362
+gemi-flash3.5_high-r1       -   25    -    -   - | sgautonb       grpnet      +0.362
+gemi-flash3.5_high-r1       -   25    -    -   - | sgautonb       tdboost     +0.382
+gemi-flash3.5_high-r1       -   25    -    -   - | swautoins      glm         +0.829 <GLM
+gemi-flash3.5_high-r1       -   25    -    -   - | swautoins      gam         +0.835
+gemi-flash3.5_high-r1       -   25    -    -   - | swautoins      grplasso    +0.829
+gemi-flash3.5_high-r1       -   25    -    -   - | swautoins      grpnet      +0.827
+gemi-flash3.5_high-r1       -   25    -    -   - | swautoins      tdboost     +0.843
+gemi-gemini35flash_hi-r1    -   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+gemi-gemini35flash_hi-r1    -   25    -    -   - | fremtpl2       gam         +0.300
+gemi-gemini35flash_hi-r1    -   25    -    -   - | fremtpl2       grplasso    +0.263
+gemi-gemini35flash_hi-r1    -   25    -    -   - | fremtpl2       grpnet      +0.263
+gemi-gemini35flash_hi-r1    -   25    -    -   - | fremtpl2       tdboost     +0.266
+gemi-gemini35flash_hi-r1    -   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+gemi-gemini35flash_hi-r1    -   25    -    -   - | ausprivauto    gam         +0.185
+gemi-gemini35flash_hi-r1    -   25    -    -   - | ausprivauto    grplasso    +0.201
+gemi-gemini35flash_hi-r1    -   25    -    -   - | ausprivauto    grpnet      +0.200
+gemi-gemini35flash_hi-r1    -   25    -    -   - | ausprivauto    tdboost     +0.205
+gemi-gemini35flash_hi-r1    -   25    -    -   - | auto_insurance glm         +0.440 <GLM
+gemi-gemini35flash_hi-r1    -   25    -    -   - | auto_insurance gam         +0.441
+gemi-gemini35flash_hi-r1    -   25    -    -   - | auto_insurance grplasso    +0.422
+gemi-gemini35flash_hi-r1    -   25    -    -   - | auto_insurance grpnet      +0.425
+gemi-gemini35flash_hi-r1    -   25    -    -   - | auto_insurance tdboost     +0.432
+gemi-gemini35flash_hi-r1    -   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+gemi-gemini35flash_hi-r1    -   25    -    -   - | bemtpl97       gam         +0.284
+gemi-gemini35flash_hi-r1    -   25    -    -   - | bemtpl97       grplasso    +0.283
+gemi-gemini35flash_hi-r1    -   25    -    -   - | bemtpl97       grpnet      +0.284
+gemi-gemini35flash_hi-r1    -   25    -    -   - | bemtpl97       tdboost     +0.294
+gemi-gemini35flash_hi-r1    -   25    -    -   - | sgautonb       glm         +0.354 <GLM
+gemi-gemini35flash_hi-r1    -   25    -    -   - | sgautonb       gam         +0.384
+gemi-gemini35flash_hi-r1    -   25    -    -   - | sgautonb       grplasso    +0.362
+gemi-gemini35flash_hi-r1    -   25    -    -   - | sgautonb       grpnet      +0.363
+gemi-gemini35flash_hi-r1    -   25    -    -   - | sgautonb       tdboost     +0.385
+gemi-gemini35flash_hi-r1    -   25    -    -   - | swautoins      glm         +0.829 <GLM
+gemi-gemini35flash_hi-r1    -   25    -    -   - | swautoins      gam         +0.835
+gemi-gemini35flash_hi-r1    -   25    -    -   - | swautoins      grplasso    +0.828
+gemi-gemini35flash_hi-r1    -   25    -    -   - | swautoins      grpnet      +0.827
+gemi-gemini35flash_hi-r1    -   25    -    -   - | swautoins      tdboost     +0.843
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | fremtpl2       gam            NA 
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | fremtpl2       grplasso    +0.236
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | fremtpl2       grpnet      +0.237
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | fremtpl2       tdboost     +0.311
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | ausprivauto    gam            NA 
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | ausprivauto    grplasso    +0.194
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | ausprivauto    grpnet      +0.195
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | ausprivauto    tdboost     +0.187
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | auto_insurance glm         +0.440 <GLM
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | auto_insurance gam            NA 
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | auto_insurance grplasso    +0.413
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | auto_insurance grpnet      +0.412
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | auto_insurance tdboost     +0.422
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | bemtpl97       gam            NA 
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | bemtpl97       grplasso    +0.284
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | bemtpl97       grpnet      +0.284
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | bemtpl97       tdboost     +0.294
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | sgautonb       glm         +0.354 <GLM
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | sgautonb       gam            NA 
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | sgautonb       grplasso    +0.360
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | sgautonb       grpnet      +0.361
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | sgautonb       tdboost     +0.369
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | swautoins      glm         +0.829 <GLM
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | swautoins      gam            NA 
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | swautoins      grplasso    +0.843
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | swautoins      grpnet      +0.843
+gemi-gemini_3.1_pro_h-r1    -   25    -    -   - | swautoins      tdboost     +0.843
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | fremtpl2       glm         -0.258 <GLM
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | fremtpl2       gam         +0.300
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | fremtpl2       grplasso    +0.267
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | fremtpl2       grpnet      +0.266
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | fremtpl2       tdboost     +0.260
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | ausprivauto    glm         -0.135 <GLM
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | ausprivauto    gam         +0.185
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | ausprivauto    grplasso    +0.200
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | ausprivauto    grpnet      +0.199
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | ausprivauto    tdboost     +0.201
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | auto_insurance glm         +0.439 <GLM
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | auto_insurance gam         +0.439
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | auto_insurance grplasso    +0.416
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | auto_insurance grpnet      +0.418
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | auto_insurance tdboost     +0.431
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | bemtpl97       glm         +0.273 <GLM
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | bemtpl97       gam         +0.284
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | bemtpl97       grplasso    +0.283
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | bemtpl97       grpnet      +0.284
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | bemtpl97       tdboost     +0.295
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | sgautonb       glm         +0.354 <GLM
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | sgautonb       gam         +0.383
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | sgautonb       grplasso    +0.362
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | sgautonb       grpnet      +0.362
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | sgautonb       tdboost     +0.385
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | swautoins      glm         +0.829 <GLM
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | swautoins      gam         +0.835
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | swautoins      grplasso    +0.828
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | swautoins      grpnet      +0.828
+gemi-gemini35flash_hi-r2    Y   25    -    -   - | swautoins      tdboost     +0.843
+clau-sonnet46_max-r2        -  100    Y    -   Y | fremtpl2       glm            NA  <GLM
+clau-sonnet46_max-r2        -  100    Y    -   Y | fremtpl2       gam            NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | fremtpl2       grplasso       NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | fremtpl2       grpnet         NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | fremtpl2       tdboost        NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | ausprivauto    glm            NA  <GLM
+clau-sonnet46_max-r2        -  100    Y    -   Y | ausprivauto    gam            NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | ausprivauto    grplasso       NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | ausprivauto    grpnet         NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | ausprivauto    tdboost        NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | auto_insurance glm         +0.440 <GLM
+clau-sonnet46_max-r2        -  100    Y    -   Y | auto_insurance gam         +0.443
+clau-sonnet46_max-r2        -  100    Y    -   Y | auto_insurance grplasso    +0.109
+clau-sonnet46_max-r2        -  100    Y    -   Y | auto_insurance grpnet      +0.109
+clau-sonnet46_max-r2        -  100    Y    -   Y | auto_insurance tdboost     +0.429
+clau-sonnet46_max-r2        -  100    Y    -   Y | bemtpl97       glm            NA  <GLM
+clau-sonnet46_max-r2        -  100    Y    -   Y | bemtpl97       gam            NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | bemtpl97       grplasso       NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | bemtpl97       grpnet         NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | bemtpl97       tdboost        NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | sgautonb       glm            NA  <GLM
+clau-sonnet46_max-r2        -  100    Y    -   Y | sgautonb       gam            NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | sgautonb       grplasso       NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | sgautonb       grpnet         NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | sgautonb       tdboost        NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | swautoins      glm            NA  <GLM
+clau-sonnet46_max-r2        -  100    Y    -   Y | swautoins      gam            NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | swautoins      grplasso       NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | swautoins      grpnet         NA 
+clau-sonnet46_max-r2        -  100    Y    -   Y | swautoins      tdboost        NA 

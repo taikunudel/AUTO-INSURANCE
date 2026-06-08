@@ -1,0 +1,162 @@
+====================================================================================
+ATYPICAL-RUN REPORT  —  runs whose performance deviates most from the average run
+====================================================================================
+Atypicality = mean |run_cell_gini - average_cell_gini| across the 30 cells.
+net>0 = atypically GOOD overall; net<0 = atypically BAD.
+
+rank run                                              atyp     net    crit overall
+----------------------------------------------------------------------------------
+1    claudecode-opus47-noKB                         0.0468 -0.0325  -0.014  +0.347
+2    claudecode-sonnet46-noKB                       0.0251 +0.0152  +0.228  +0.395
+3    codex-gpt5.3-noKB                              0.0209 -0.0125  -0.196  +0.365
+4    claudecode-opus47-noKB                         0.0209 +0.0183  +0.217  +0.398
+5    claudecode-opus47-KB                           0.0208 +0.0145  +0.218  +0.394
+6    gemini-gemini35flash-KB                        0.0191 +0.0181  +0.218  +0.398
+7    codex-gpt5.5-KB                                0.0189 +0.0177  +0.217  +0.397
+8    codex-gpt5.5-noKB                              0.0188 +0.0145  +0.218  +0.394
+9    gemini-gemini35flash-noKB                      0.0184 -0.0109  -0.196  +0.369
+10   gemini-gemini3.1pro-KB                         0.0182 -0.0104  -0.196  +0.369
+11   codex-gpt5.4-noKB                              0.0182 +0.0155  +0.218  +0.395
+12   claudecode-sonnet46-KB                         0.0179 -0.0098  -0.196  +0.370
+13   gemini-gemini35flash-noKB                      0.0170 -0.0103  -0.196  +0.369
+14   openclaw-gemini35flash-KB                      0.0167 -0.0107  -0.196  +0.369
+15   gemini-gemini35flash-KB                        0.0166 -0.0110  -0.197  +0.369
+16   claudecode-opus47-KB                           0.0155 +0.0025  -0.014  +0.382
+17   codex-gpt5.3-KB                                0.0154 -0.0095  -0.154  +0.370
+18   claudecode-sonnet46-KB                         0.0148 -0.0024  -0.043  +0.377
+19   codex-gpt5.4-KB                                0.0105 -0.0069  -0.069  +0.373
+20   openclaw-gpt5.5-KB                             0.0101 +0.0093  +0.102  +0.389
+
+====================================================================================
+DETAILED PROFILES — top 6 most-atypical runs
+====================================================================================
+
+##############################################################################
+# RANK 1: claudecode opus47 [noKB]   (atypically BAD)
+# run_dir: run-claudecode-opus47_max-20260525_233131
+##############################################################################
+  Overall: crit_mean=-0.0139  overall_mean=+0.3470  atypicality=0.0468
+  Cells driving its atypicality (run gini vs average):
+     auto_insurance  grpnet    run=+0.109  avg=+0.404  dev=-0.295  below avg
+     auto_insurance  grplasso  run=+0.109  avg=+0.402  dev=-0.294  below avg
+     fremtpl2        glm       run=-0.207  avg=-0.025  dev=-0.182  below avg
+     fremtpl2        grplasso  run=+0.085  avg=+0.251  dev=-0.166  below avg
+     fremtpl2        grpnet    run=+0.086  avg=+0.251  dev=-0.165  below avg
+     ausprivauto     glm       run=+0.179  avg=+0.022  dev=+0.157  ABOVE avg
+  GLM convergence factors:
+     maxit=100  mustart=False  warmstart=False  clamp=False  read_own_glm_log=True  read_other_run=True
+     ** referenced other run(s): run-claudecode-opus47_high-20260525_233131
+  Model spec per type:
+     glm       p=1.7 maxit=100 must=- warm=-
+     gam       gam Tweedie(p,link=power0) method=REML select=Y k=?
+     grplasso  HDtweedie alpha=1 lambda.min std=default
+     grpnet    HDtweedie alpha=0.5 lambda.min std=default
+     tdboost   TDboost ntrees=? shr=? depth=? cv=? best=TDboost.perf(cv)
+
+##############################################################################
+# RANK 2: claudecode sonnet46 [noKB]   (atypically GOOD)
+# run_dir: run-claudecode-sonnet46_max-20260526_005137
+##############################################################################
+  Overall: crit_mean=+0.2277  overall_mean=+0.3948  atypicality=0.0251
+  Cells driving its atypicality (run gini vs average):
+     fremtpl2        glm       run=+0.269  avg=-0.025  dev=+0.294  ABOVE avg
+     ausprivauto     glm       run=+0.186  avg=+0.022  dev=+0.164  ABOVE avg
+     fremtpl2        tdboost   run=+0.330  avg=+0.254  dev=+0.076  ABOVE avg
+     ausprivauto     tdboost   run=+0.162  avg=+0.197  dev=-0.035  below avg
+     bemtpl97        tdboost   run=+0.262  avg=+0.295  dev=-0.033  below avg
+     sgautonb        tdboost   run=+0.364  avg=+0.384  dev=-0.020  below avg
+  GLM convergence factors:
+     maxit=200  mustart=True  warmstart=False  clamp=True  read_own_glm_log=False  read_other_run=True
+     ** referenced other run(s): run-claudecode-opus47_high-20260525_233131;run-claudecode-sonnet46_high-20260526_005137
+  Model spec per type:
+     glm       p=1.7 maxit=200 must=Y warm=Y
+     gam       gam Tweedie method=REML select=- k=?
+     grplasso  HDtweedie alpha=1 ? std=FALSE
+     grpnet    HDtweedie alpha=0.5 ? std=FALSE
+     tdboost   TDboost ntrees=? shr=0.05 depth=3 cv=? best=manual
+
+##############################################################################
+# RANK 3: codex gpt5.3 [noKB]   (atypically BAD)
+# run_dir: run-codex-gpt5.3_extra-high-20260526_064603
+##############################################################################
+  Overall: crit_mean=-0.1963  overall_mean=+0.3649  atypicality=0.0209
+  Cells driving its atypicality (run gini vs average):
+     fremtpl2        glm       run=-0.258  avg=-0.025  dev=-0.232  below avg
+     ausprivauto     glm       run=-0.135  avg=+0.022  dev=-0.157  below avg
+     fremtpl2        tdboost   run=+0.311  avg=+0.254  dev=+0.057  ABOVE avg
+     fremtpl2        grplasso  run=+0.235  avg=+0.251  dev=-0.016  below avg
+     fremtpl2        grpnet    run=+0.236  avg=+0.251  dev=-0.015  below avg
+     bemtpl97        gam       run=+0.295  avg=+0.283  dev=+0.012  ABOVE avg
+  GLM convergence factors:
+     maxit=25  mustart=False  warmstart=False  clamp=True  read_own_glm_log=True  read_other_run=True
+     ** referenced other run(s): run-claudecode-haiku45_default-20260526_032419;run-claudecode-opus47_high-20260525_233131;run-claudecode-sonnet46_high-20260526_005137;run-codex-gpt5.4_extra-high-20260526_064523;run-codex-gpt5.5_extra-high-20260526_032332;run-gemini-gemini_3.1_pro_high-20260526_041219;run-openclaw-flash3.5_high-20260526_040849
+  Model spec per type:
+     glm       p=1.7 maxit=25 must=- warm=-
+     gam       gam Tweedie(p,link=power0) method=REML select=- k=?
+     grplasso  HDtweedie alpha=1 ? std=FALSE
+     grpnet    HDtweedie alpha=0.5 ? std=FALSE
+     tdboost   TDboost ntrees=? shr=0.05 depth=3 cv=0 best=manual
+
+##############################################################################
+# RANK 4: claudecode opus47 [noKB]   (atypically GOOD)
+# run_dir: run-claudecode-opus47_max-20260527_103156
+##############################################################################
+  Overall: crit_mean=+0.2175  overall_mean=+0.3979  atypicality=0.0209
+  Cells driving its atypicality (run gini vs average):
+     fremtpl2        glm       run=+0.256  avg=-0.025  dev=+0.281  ABOVE avg
+     ausprivauto     glm       run=+0.179  avg=+0.022  dev=+0.157  ABOVE avg
+     fremtpl2        tdboost   run=+0.223  avg=+0.254  dev=-0.031  below avg
+     auto_insurance  grplasso  run=+0.426  avg=+0.402  dev=+0.024  ABOVE avg
+     auto_insurance  grpnet    run=+0.427  avg=+0.404  dev=+0.024  ABOVE avg
+     fremtpl2        grpnet    run=+0.268  avg=+0.251  dev=+0.017  ABOVE avg
+  GLM convergence factors:
+     maxit=200  mustart=True  warmstart=False  clamp=True  read_own_glm_log=False  read_other_run=False
+  Model spec per type:
+     glm       p=1.7 maxit=200 must=- warm=-
+     gam       gam Tweedie method=REML select=- k=?
+     grplasso  HDtweedie alpha=1 lambda.min std=FALSE
+     grpnet    HDtweedie alpha=? lambda.min std=FALSE
+     tdboost   TDboost ntrees=? shr=? depth=? cv=? best=TDboost.perf(cv)
+
+##############################################################################
+# RANK 5: claudecode opus47 [KB]   (atypically GOOD)
+# run_dir: run-claudecode-opus47_max-20260527_075454
+##############################################################################
+  Overall: crit_mean=+0.2185  overall_mean=+0.3941  atypicality=0.0208
+  Cells driving its atypicality (run gini vs average):
+     fremtpl2        glm       run=+0.258  avg=-0.025  dev=+0.283  ABOVE avg
+     ausprivauto     glm       run=+0.179  avg=+0.022  dev=+0.157  ABOVE avg
+     fremtpl2        tdboost   run=+0.178  avg=+0.254  dev=-0.075  below avg
+     auto_insurance  grpnet    run=+0.425  avg=+0.404  dev=+0.021  ABOVE avg
+     auto_insurance  grplasso  run=+0.423  avg=+0.402  dev=+0.021  ABOVE avg
+     fremtpl2        grpnet    run=+0.269  avg=+0.251  dev=+0.018  ABOVE avg
+  GLM convergence factors:
+     maxit=100  mustart=False  warmstart=True  clamp=False  read_own_glm_log=True  read_other_run=False
+  Model spec per type:
+     glm       p=1.7 maxit=100 must=- warm=Y
+     gam       bam Tweedie(p,link=power0) method=fREML select=Y k=10
+     grplasso  HDtweedie alpha=1 lambda.min std=default
+     grpnet    HDtweedie alpha=0.5 lambda.min std=default
+     tdboost   TDboost ntrees=? shr=? depth=? cv=? best=TDboost.perf(cv)
+
+##############################################################################
+# RANK 6: gemini gemini35flash [KB]   (atypically GOOD)
+# run_dir: run-gemini-gemini35flash_high-20260526_041133
+##############################################################################
+  Overall: crit_mean=+0.2185  overall_mean=+0.3977  atypicality=0.0191
+  Cells driving its atypicality (run gini vs average):
+     fremtpl2        glm       run=+0.258  avg=-0.025  dev=+0.283  ABOVE avg
+     ausprivauto     glm       run=+0.179  avg=+0.022  dev=+0.157  ABOVE avg
+     auto_insurance  grpnet    run=+0.422  avg=+0.404  dev=+0.018  ABOVE avg
+     fremtpl2        grplasso  run=+0.268  avg=+0.251  dev=+0.018  ABOVE avg
+     fremtpl2        grpnet    run=+0.268  avg=+0.251  dev=+0.017  ABOVE avg
+     auto_insurance  grplasso  run=+0.419  avg=+0.402  dev=+0.016  ABOVE avg
+  GLM convergence factors:
+     maxit=200  mustart=True  warmstart=False  clamp=True  read_own_glm_log=True  read_other_run=True
+     ** referenced other run(s): run-codex-gpt55_extra_high-20260526_021636
+  Model spec per type:
+     glm       p=1.7 maxit=200 must=- warm=-
+     gam       bam Tweedie method=fREML select=- k=?
+     grplasso  HDtweedie alpha=1.0 lambda.min std=default
+     grpnet    HDtweedie alpha=0.7 lambda.min std=default
+     tdboost   TDboost ntrees=3000 shr=0.005 depth=3 cv=5 best=TDboost.perf(cv)

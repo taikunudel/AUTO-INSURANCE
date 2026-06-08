@@ -1,0 +1,44 @@
+Q1. KB CONSISTENCY PER (dataset × model_type)
+
+[ KB HELPS ]
+dataset           model_type      helped    hurt      meanΔ       maxΔ       minΔ
+auto_insurance    grpnet             3/7     0/7    +0.0477    +0.1584    -0.0047
+auto_insurance    grplasso           2/7     0/7    +0.0465    +0.1588    -0.0039
+fremtpl2          grplasso           5/7     0/7    +0.0327    +0.0904    +0.0041
+fremtpl2          grpnet             5/7     0/7    +0.0317    +0.0898    +0.0035
+ausprivauto       tdboost            2/7     0/7    +0.0088    +0.0396    -0.0087
+sgautonb          tdboost            2/7     0/7    +0.0083    +0.0223    +0.0018
+ausprivauto       grpnet             3/7     0/7    +0.0072    +0.0140    +0.0001
+ausprivauto       grplasso           3/7     0/7    +0.0069    +0.0138    -0.0007
+
+[ KB HURTS ]
+dataset           model_type      helped    hurt      meanΔ       maxΔ       minΔ
+swautoins         grpnet             0/7     5/7    -0.0114    +0.0010    -0.0153
+swautoins         grplasso           0/7     5/7    -0.0111    +0.0000    -0.0145
+bemtpl97          tweedie_gam        0/6     2/6    -0.0061    +0.0032    -0.0180
+
+
+Q2. AGENT IMPROVEMENT/DEGRADATION WITH KB vs noKB
+
+harness       model              Δoverall        Δcrit  verdict               
+claudecode    sonnet46            +0.0233      -0.3475  KB STRONGLY HURTS     
+claudecode    opus47              +0.0156      +0.0005  KB mildly helps       
+gemini        gemini35flash       +0.0142      +0.2073  KB STRONGLY HELPS     
+gemini        gemini3.1pro        +0.0112      +0.0000  KB mildly helps       
+codex         gpt5.3              +0.0052      +0.0420  KB mildly helps       
+codex         gpt5.5              +0.0032      -0.0014  KB-insensitive        
+codex         gpt5.4              -0.0224      -0.2876  KB STRONGLY HURTS     
+
+
+Q3. AGENT RANKING ACROSS ALL CELLS
+
+harness       model            meanRank     #1    top3   bot2   n_runs
+openclaw      gpt5.5               3.97      4      15      3        2
+gemini        gemini35flash        4.40      3      12      2        4
+codex         gpt5.5               4.57      6      10      5        2
+claudecode    opus47               4.63      3      12      5        4
+openclaw      gemini35flash        4.77      4      14      8        1
+codex         gpt5.4               5.03      3      10      7        2
+gemini        gemini3.1pro         5.66      2       5      7        2
+codex         gpt5.3               5.80      1       6      9        2
+claudecode    sonnet46             6.07      4       6     13        4

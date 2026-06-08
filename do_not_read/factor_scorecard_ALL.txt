@@ -1,0 +1,35 @@
+PER-RUN FACTOR SCORECARD  (sorted by fremtpl2 GLM gini, best->worst)
+Behavioral factors: claudecode/gemini/openclaw reliable; codex APPROX (flattened logs).
+
+corpus agent                      maxit must warm clmp    eps fallbk rdLog othRun rtry | STARTFIX |  fremGLM  auspGLM    crit overall
+-------------------------------------------------------------------------------------------------------------------------------------
+noKB  clau-sonnet46_max-r1         200    Y    -    Y   1e-6      Y     -      Y    0 |      YES |   +0.269   +0.186  +0.228  +0.395
+noKB  code-gpt5.5_extra-hig-r1     200    Y    -    Y   1e-7      Y     Y      Y    0 |      YES |   +0.258   +0.179  +0.218  +0.394
+KB    clau-opus47_max-r2           100    -    Y    -   1e-6      Y     Y      -    5 |      YES |   +0.258   +0.179  +0.218  +0.394
+KB    open-gpt5.5_xhigh-r2          25    -    -    -   1e-8      -     Y      -    0 |       no |   +0.258      NA   +0.258  +0.268
+KB    code-gpt55_extra_high-r1     200    Y    -    -   1e-6      Y     Y      -    0 |      YES |   +0.258   +0.176  +0.217  +0.397
+KB    gemi-gemini35flash_hi-r1     200    Y    -    Y   1e-6      Y     Y      Y    0 |      YES |   +0.258   +0.179  +0.218  +0.398
+noKB  code-gpt5.4_extra-hig-r1     100    Y    -    Y   1e-8      Y     Y      Y    0 |      YES |   +0.258   +0.179  +0.218  +0.395
+noKB  clau-opus47_max-r2           200    Y    -    Y   1e-7      -     -      -    0 |      YES |   +0.256   +0.179  +0.217  +0.398
+KB    clau-sonnet46_max-r2         100    Y    -    Y   1e-8      Y     Y      Y    0 |      YES |   +0.049   -0.135  -0.043  +0.377
+KB    open-gpt5.5_xhigh-r1         200    -    -    -   1e-8      Y     Y      Y    0 |       no |   +0.025   +0.179  +0.102  +0.389
+KB    code-gpt5.4_extra-hig-r1      25    -    -    -   1e-8      Y     Y      Y    0 |       no |   -0.003   -0.135  -0.069  +0.373
+KB    code-gpt5.3-codex_ext-r1      25    -    -    -   1e-8      Y     Y      -    0 |       no |   -0.174   -0.135  -0.154  +0.370
+KB    clau-opus47_max-r1           100    -    -    -   1e-8      -     Y      -    0 |       no |   -0.207   +0.179  -0.014  +0.382
+noKB  clau-opus47_max-r1           100    -    -    -   1e-8      -     Y      Y    0 |       no |   -0.207   +0.179  -0.014  +0.347
+KB    clau-sonnet46_max-r1          25    -    -    -   1e-8      Y     Y      -    0 |       no |   -0.258   -0.135  -0.196  +0.370
+KB    gemi-gemini3.1pro_hig-r1      25    -    -    -   1e-8      Y     -      -    0 |       no |   -0.258   -0.135  -0.196  +0.369
+KB    open-gemini31pro_high-r1      25    -    -    -   1e-8      Y     -      -    0 |       no |   -0.258   -0.135  -0.196  +0.366
+KB    open-gemini35flash_hi-r1      25    -    -    -   1e-8      Y     -      -    0 |       no |   -0.258   -0.135  -0.196  +0.369
+noKB  code-gpt5.3_extra-hig-r1      25    -    -    Y   1e-8      -     Y      Y    0 |       no |   -0.258   -0.135  -0.196  +0.365
+noKB  gemi-flash3.5_high-r1         25    -    -    -   1e-8      Y     -      Y    0 |       no |   -0.258   -0.135  -0.196  +0.369
+noKB  gemi-gemini35flash_hi-r1      25    -    -    -   1e-8      Y     Y      -    0 |       no |   -0.258   -0.135  -0.196  +0.369
+noKB  gemi-gemini_3.1_pro_h-r1      25    -    -    -   1e-8      Y     -      -    0 |       no |   -0.258   -0.135  -0.196  +0.358
+KB    gemi-gemini35flash_hi-r2      25    -    -    -   1e-8      Y     -      -    0 |       no |   -0.258   -0.135  -0.197  +0.369
+KB    open-gemini_high-r1           25    -    -    -   1e-8      Y     -      -    0 |       no |   -0.258      NA   -0.258  +0.145
+noKB  clau-sonnet46_max-r2         100    Y    -    -   1e-6      Y     -      -    0 |      YES |      NA       NA      NA   +0.306
+
+CROSSTAB — full GLM fix (maxit>=100 AND mustart/warmstart) vs fremtpl2 GLM outcome:
+              CONVERGED(+)      weak(~0)   DIVERGED(-)            NA
+  fix                    7             1             0             1
+  no fix                 1             2            13             0

@@ -6,7 +6,6 @@ audit/
 *.log
 
 # ===== heavy / out-of-scope =====
-do_not_read/
 paper/
 
 # ===== local wiki archive (the vendored copy lives in knowledge-base/) =====
