@@ -1,0 +1,5 @@
+.DS_Store
+secrets/
+logs/
+*.log
+_smoke.R

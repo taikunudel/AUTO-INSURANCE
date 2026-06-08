@@ -1,0 +1,33 @@
+# ===== run artifacts (never tracked) =====
+run-*/
+failed-runs/
+v4-runs/
+audit/
+*.log
+
+# ===== heavy / out-of-scope =====
+do_not_read/
+paper/
+
+# ===== local wiki archive (the vendored copy lives in knowledge-base/) =====
+llm-wiki-agent/
+
+# ===== run-specific scratch (not reusable) =====
+read_wiki.py
+end_task.py
+wait_script.sh
+
+# ===== secrets / runtime — never publish =====
+evaluator/secrets/
+evaluator/logs/
+secrets/
+**/secrets.rds
+*.rds
+
+# ===== local config / OS cruft =====
+.claude/settings.local.json
+.DS_Store
+**/.DS_Store
+*.bundle
+__pycache__/
+**/__pycache__/

@@ -1,0 +1,27 @@
+name: ausprivauto
+description: "[rank #4, 3 papers] Australian private motor insurance, policy years 2004-2005 (CASdatasets)"
+
+source:
+  type: r_package
+  package: CASdatasets
+  dataset: ausprivauto0405
+
+response: ClaimAmount
+response_alias: "y"
+
+predictors:
+  numeric: [Exposure, VehValue]
+  factor:  [VehAge, VehBody, Gender, DrivAge]
+
+# Subsample to keep the API server responsive; 25k is plenty for benchmarking.
+prepare: |
+  set.seed(20260504); raw <- raw[sample(nrow(raw), 25000), ]
+
+metric: gini
+
+splits:
+  n_trials: 10
+  ratios:
+    train: 0.70
+    eval:  0.10
+    test:  0.20

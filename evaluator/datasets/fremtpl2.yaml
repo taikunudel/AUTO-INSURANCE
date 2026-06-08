@@ -1,0 +1,35 @@
+name: fremtpl2
+description: "[rank #1, 11 papers] French motor third-party liability (CASdatasets, 2011); freq + sev merged into per-policy total claim amount"
+
+source:
+  type: r_package
+  package: CASdatasets
+  dataset: freMTPL2freq
+
+response: ClaimAmount
+response_alias: "y"
+
+predictors:
+  numeric: [Exposure, VehPower, VehAge, DrivAge, BonusMalus, Density]
+  factor:  [VehBrand, VehGas, Area, Region]
+
+# Merge severity table and subsample. Each policy gets sum of its claim amounts;
+# policies with no claims get 0. Result is a Tweedie-shaped per-policy total loss.
+prepare: |
+  e <- new.env()
+  data("freMTPL2sev", package = "CASdatasets", envir = e)
+  sev_agg <- aggregate(e$freMTPL2sev$ClaimAmount,
+                        list(IDpol = e$freMTPL2sev$IDpol), sum)
+  names(sev_agg)[2] <- "ClaimAmount"
+  raw <- merge(raw, sev_agg, by = "IDpol", all.x = TRUE)
+  raw$ClaimAmount[is.na(raw$ClaimAmount)] <- 0
+  set.seed(20260504); raw <- raw[sample(nrow(raw), 30000), ]
+
+metric: gini
+
+splits:
+  n_trials: 10
+  ratios:
+    train: 0.70
+    eval:  0.10
+    test:  0.20

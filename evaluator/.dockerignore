@@ -1,0 +1,7 @@
+data/
+logs/
+client_example/
+README.md
+.git/
+.DS_Store
+*.rds
