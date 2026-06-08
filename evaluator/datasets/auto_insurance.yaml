@@ -1,0 +1,27 @@
+name: auto_insurance
+description: "[rank #2, 10 papers] AutoClaim (Yip & Yau 2005); cplm::AutoClaim, IN_YY == 1 subset (first-year customers, 2812 rows)"
+
+source:
+  type: r_package
+  package: cplm
+  dataset: AutoClaim
+
+filter: "IN_YY == 1"
+
+response: CLM_AMT
+response_alias: "y"
+
+predictors:
+  numeric: [AGE, BLUEBOOK, HOMEKIDS, KIDSDRIV, INCOME, MVR_PTS, NPOLICY,
+            TRAVTIME, YOJ, HOME_VAL]
+  factor:  [CAR_USE, CAR_TYPE, RED_CAR, REVOLKED, GENDER, MARRIED, PARENT1,
+            JOBCLASS, MAX_EDUC, AREA]
+
+metric: gini
+
+splits:
+  n_trials: 10
+  ratios:
+    train: 0.70
+    eval:  0.10
+    test:  0.20

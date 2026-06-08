@@ -1,0 +1,28 @@
+name: bemtpl97
+description: "[rank #3, 5 papers] Belgian motor third-party liability, 1997 (Henckaerts et al, CASdatasets)"
+
+source:
+  type: r_package
+  package: CASdatasets
+  dataset: beMTPL97
+
+response: amount
+response_alias: "y"
+
+predictors:
+  numeric: [expo, ageph, bm, power, agec, long, lat]
+  factor:  [coverage, sex, fuel, use, fleet]
+
+# Subsample; full 163k rows is unnecessary for benchmarking and slow to bake.
+# Drop response-leakage columns (nclaims, average, claim) — they encode the response.
+prepare: |
+  set.seed(20260504); raw <- raw[sample(nrow(raw), 25000), ]
+
+metric: gini
+
+splits:
+  n_trials: 10
+  ratios:
+    train: 0.70
+    eval:  0.10
+    test:  0.20

@@ -1,0 +1,23 @@
+name: sgautonb
+description: "[rank #5 (tie), 2 papers] Singapore auto insurance, 1993-2001 (Frees & Valdez 2008, CASdatasets). Frequency-only — response is claim count, not amount."
+
+source:
+  type: r_package
+  package: CASdatasets
+  dataset: sgautonb
+
+response: Clm_Count
+response_alias: "y"
+
+predictors:
+  numeric: [Exp_weights, NCD, AgeCat, AutoAge, VAgeCat]
+  factor:  [SexInsured, VehicleType]
+
+metric: gini
+
+splits:
+  n_trials: 10
+  ratios:
+    train: 0.70
+    eval:  0.10
+    test:  0.20

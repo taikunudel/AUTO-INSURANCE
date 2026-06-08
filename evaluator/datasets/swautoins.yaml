@@ -1,0 +1,27 @@
+name: swautoins
+description: "[rank #5 (tie), 2 papers] Swedish third-party motor insurance (CASdatasets, 2182 rows, 1977)"
+
+source:
+  type: r_package
+  package: CASdatasets
+  dataset: swautoins
+
+response: Payment
+response_alias: "y"
+
+predictors:
+  numeric: [Insured, Claims]
+  factor:  [Kilometres, Zone, Bonus, Make]
+
+prepare: |
+  # Treat the integer-coded predictors as factors per CASdatasets docs.
+  for (v in c("Kilometres","Zone","Bonus","Make")) raw[[v]] <- factor(raw[[v]])
+
+metric: gini
+
+splits:
+  n_trials: 10
+  ratios:
+    train: 0.70
+    eval:  0.10
+    test:  0.20
