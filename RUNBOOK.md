@@ -26,6 +26,20 @@ Fill `task_prompt.template.txt` (`{MODEL}`, `{HARNESS}`, `{THINKING}`, `{WORKSPA
 implement it end-to-end, creating a folder
 `run-<harness>-<model>-<thinking>-run1-wiki<ver>-<UTC>`.
 
+## Roster — the models to test (cross-harness)
+The full grid is **`roster.yaml`** — one entry per (harness, model) with the exact
+`model` string and `thinking` level each harness expects. Launch one run per entry
+(same datasets, same prompt). At a glance:
+
+| harness | models |
+|---|---|
+| claudecode | opus47 · sonnet46 · haiku45 |
+| codex | gpt5.4 · gpt5.5  *(gpt5.3 deferred — needs API-key auth)* |
+| antigravity | gemini31pro · gemini35flash |
+| openclaw | glm5 · glm5.1 · glm5turbo · glm4.7 · gpt5.4 · gpt5.5 · or-gemini31pro · or-gemini35flash · or-gemma4 |
+
+Exact `--model` strings + thinking levels live in `roster.yaml`.
+
 ## Launch — pick your harness (run from the repo root; each is nohup-detached)
 
 **Claude Code**
