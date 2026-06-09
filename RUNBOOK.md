@@ -33,8 +33,8 @@ The full grid is **`roster.yaml`** — one entry per (harness, model) with the e
 
 | harness | models |
 |---|---|
-| claudecode | opus47 · sonnet46 · haiku45 |
-| codex | gpt5.4 · gpt5.5  *(gpt5.3 deferred — needs API-key auth)* |
+| claudecode | opus47 · sonnet46 |
+| codex | gpt5.4 · gpt5.5 |
 | antigravity | gemini31pro · gemini35flash |
 | openclaw | glm5 · glm5.1 · glm5turbo · glm4.7 · gpt5.4 · gpt5.5 · or-gemini31pro · or-gemini35flash · or-gemma4 |
 
