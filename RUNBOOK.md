@@ -2,7 +2,9 @@
 
 How to launch a benchmark agent and collect results. The benchmark agent's own
 contract is `CLAUDE.md` — you don't need to read it to run a run. Everything to launch
-is here; you never need `do_not_read/`.
+is here; you never need `do_not_read/`. If you are a **master operator agent**
+orchestrating whole runs (start → monitor → resume → evaluate), your playbook is
+**`MASTER.md`**; this file is the launch-command reference it points into.
 
 ## Prereqs (once)
 1. `./setup.sh` — R env + datasets (see README).
@@ -80,6 +82,8 @@ EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=high \
   not enough: a row can exist with NA if that model's eval failed.
 - The headline metric is `mean_eval_gini` (Gini on the sealed test set, averaged over
   the 10 trials).
+- Across runs: `python3 operator/collect-results.py` (completeness per run;
+  `--tidy` dumps every row as CSV for comparison).
 
 ## If a run stops short (openclaw timeouts, external kills)
 The resume loop re-runs the agent against its on-disk progress until 24 are scored,

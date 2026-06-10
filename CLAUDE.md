@@ -150,6 +150,9 @@ fabrications are detectable. Be complete — it's cheaper than getting caught.
 
 - The `do_not_read/` folder is out of scope. Do not read, reference, or use
   files inside it as context.
+- `README.md`, `FINDINGS.md`, and `OPERATOR.md` are operator/human-facing
+  documents about *completed* runs. Same rule as `do_not_read/`: do not read,
+  reference, or use them as context for your task.
 - The wiki repo at `knowledge-base/` has its own inside-the-repo schema
   files (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`). Those govern wiki
   *maintenance* (ingest / lint / graph workflows) and only apply when an
