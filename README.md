@@ -1,34 +1,40 @@
 # auto-insurance — an LLM-agent generalization benchmark
 
+> **Branch note:** this is the **`no-wiki` branch** — the control arm with **no
+> `knowledge-base/`**. Agents work from their own knowledge + execution feedback
+> only, and every run is labeled `wiki0`. The wiki arm lives on `main`. This branch
+> also adds **`MASTER.md`**: the playbook for a master operator agent that starts,
+> resumes, and evaluates runs.
+
 This repo runs a benchmark where an **AI coding agent** is dropped into a workspace and
 asked to autonomously write R that fits four Tweedie-family models (`tweedie_gam`,
 `grplasso`, `grpnet`, `tdboost`) across **six held-out insurance datasets**, scoring
-each by **Gini** against a sealed eval API. The agent may read a local knowledge wiki
-(`knowledge-base/`) but must discover dataset-specific fixes itself — the wiki omits
-them by design. The benchmark measures whether the agent + wiki **transfer to data
-they have not seen**.
+each by **Gini** against a sealed eval API. The agent must discover dataset-specific
+fixes itself, from its own model warnings and errors. The benchmark measures whether
+the agent **transfers to data it has not seen**.
 
 Read this top to bottom and you — a human **or** an operator agent — can go from a
 fresh clone to a running benchmark.
 
 ## The two roles
-- **Operator** (you, or an operator agent): sets up the machine, starts the eval API,
-  launches the benchmark agent, collects results. Your guides are this README,
-  **`RUNBOOK.md`**, and `setup.sh`.
+- **Operator** (you, or a master operator agent): sets up the machine, starts the eval
+  API, launches the benchmark agents, resumes them when they stall, evaluates results.
+  Your guides are this README, **`MASTER.md`** (the operator-agent playbook),
+  **`RUNBOOK.md`** (per-harness launch commands), and `setup.sh`.
 - **Benchmark agent**: the model under test. It reads **`CLAUDE.md`** (+ `AGENTS.md` /
-  `GEMINI.md`) and `knowledge-base/`, and must **not** read `do_not_read/`. You don't
-  write its code — you launch it and it does the work.
+  `GEMINI.md`) and must **not** read `do_not_read/`. You don't write its code — you
+  launch it and it does the work.
 
 ## What's in here
 | path | what |
 |---|---|
 | `CLAUDE.md` · `AGENTS.md` · `GEMINI.md` | the benchmark agent's contract (one per harness family) |
 | `plan_v5.md` · `checklist_v5.md` | the task spec the agent implements |
-| `knowledge-base/` | the knowledge wiki the agent consults (snapshot 0531 — see `knowledge-base/WIKI_VERSION.txt`) |
+| `MASTER.md` | the master operator agent's playbook: start → monitor → resume → evaluate |
 | `evaluator/` | the sealed scoring API: `app.R` (plumber), `Dockerfile`, 6 dataset manifests |
-| `operator/` | run tooling: auto-resume loops, eval-API watchdog (paths self-locate) |
+| `operator/` | run tooling: auto-resume loops, results aggregator, eval-API watchdog (paths self-locate) |
 | `setup.sh` · `smoke.sh` · `.env.example` | environment bootstrap, end-to-end check, config |
-| `RUNBOOK.md` · `task_prompt.template.txt` | how to launch a run + the prompt template |
+| `RUNBOOK.md` · `roster.yaml` · `task_prompt.template.txt` | per-harness launch commands, the model grid, the prompt template |
 
 ## Getting started — four steps
 

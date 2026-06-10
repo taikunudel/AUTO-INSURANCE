@@ -1,4 +1,0 @@
-# litellm 1.82.7–1.82.8 were compromised in a supply chain attack (Mar 2026).
-# Pin to a verified safe version. See: https://github.com/SamurAIGPT/llm-wiki-agent/issues/41
-litellm~=1.83.10
-networkx~=3.6.1

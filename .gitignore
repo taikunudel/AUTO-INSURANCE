@@ -11,7 +11,7 @@ audit/
 # ===== heavy / out-of-scope =====
 paper/
 
-# ===== local wiki archive (the vendored copy lives in knowledge-base/) =====
+# ===== local wiki archive (main branch carries the vendored copy; none here) =====
 llm-wiki-agent/
 
 # ===== run-specific scratch (not reusable) =====

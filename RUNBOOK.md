@@ -2,7 +2,12 @@
 
 How to launch a benchmark agent and collect results. The benchmark agent's own
 contract is `CLAUDE.md` — you don't need to read it to run a run. Everything to launch
-is here; you never need `do_not_read/`.
+is here; you never need `do_not_read/`. If you are a **master operator agent**
+orchestrating whole runs (start → monitor → resume → evaluate), your playbook is
+**`MASTER.md`**; this file is the launch-command reference it points into.
+
+> **This branch (`no-wiki`):** there is no `knowledge-base/`. Always launch with
+> `WIKI_VERSION=0` — run folders are named `…-wiki0-…`.
 
 ## Prereqs (once)
 1. `./setup.sh` — R env + datasets (see README).
@@ -15,7 +20,7 @@ is here; you never need `do_not_read/`.
 ```
 EVAL_API_URL=http://localhost:8765   # where the agent scores
 RUN_INDEX=1                          # seed base: per-trial seed = 1000*RUN_INDEX + trial
-WIKI_VERSION=0531                    # label only; the agent reads knowledge-base/ as-is
+WIKI_VERSION=0                       # always 0 on this branch — no knowledge base present
 THINKING_LEVEL=<level>               # recorded in the run; harness flag differs (below)
 ```
 Load your `.env` first: `set -a; . ./.env; set +a`.
@@ -44,14 +49,14 @@ Exact `--model` strings + thinking levels live in `roster.yaml`.
 
 **Claude Code**
 ```bash
-EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=max \
+EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0 THINKING_LEVEL=max \
   nohup claude -p "$(cat task_prompt.txt)" --model <model-id> --effort max \
     --dangerously-skip-permissions --output-format json > run.log 2>&1 &
 ```
 
 **Codex**
 ```bash
-EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=extra-high \
+EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0 THINKING_LEVEL=extra-high \
   codex exec "$(cat task_prompt.txt)" -C "$PWD" \
     -m <model-id> -c model_reasoning_effort=xhigh \
     --dangerously-bypass-approvals-and-sandbox
@@ -59,7 +64,7 @@ EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=extra-hi
 
 **Antigravity (`agy`)** — the "gemini" harness *is* antigravity, **not** the deprecated gemini CLI
 ```bash
-EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=high \
+EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0 THINKING_LEVEL=high \
   nohup agy -p "$(cat task_prompt.txt)" --model "<Display Name>" \
     --dangerously-skip-permissions --print-timeout 4h > run.log 2>&1 &
 # `agy models` lists the exact display names. --print-timeout must be long (default 5m).
@@ -67,7 +72,7 @@ EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=high \
 
 **openclaw** — runs the agent inside its gateway; prone to a ~10-min provider RPC timeout
 ```bash
-EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=high \
+EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0 THINKING_LEVEL=high \
   nohup openclaw agent --agent main --session-key agent:main:<key> \
     --model <provider/model> --thinking <on|high|xhigh> --timeout 14400 \
     --message "$(cat task_prompt.txt)" --json > run.log 2>&1 &
@@ -80,6 +85,8 @@ EVAL_API_URL=$EVAL_API_URL RUN_INDEX=1 WIKI_VERSION=0531 THINKING_LEVEL=high \
   not enough: a row can exist with NA if that model's eval failed.
 - The headline metric is `mean_eval_gini` (Gini on the sealed test set, averaged over
   the 10 trials).
+- Across runs: `python3 operator/collect-results.py` (completeness per run;
+  `--tidy` dumps every row as CSV for comparison).
 
 ## If a run stops short (openclaw timeouts, external kills)
 The resume loop re-runs the agent against its on-disk progress until 24 are scored,
