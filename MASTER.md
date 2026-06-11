@@ -103,8 +103,39 @@ For each finished run report:
 Flag, don't hide, anomalies: an eval Gini > 0.5 (0–1 scale) is a possible leak; a
 negative Gini usually means a degenerate fit. Report them as found.
 
+## 4.5 Audit runs mechanically first (zero-token)
+
+Do **not** burn LLM tokens having agents read raw trajectories to verify
+mechanical checklist items — ~80% of `checklist_v5.md` is deterministically
+checkable. Use the script:
+
+```bash
+python3 operator/mech-audit.py            # audits every run-*/ folder
+python3 operator/mech-audit.py <folder>   # one folder
+```
+
+It writes `operator/audits/<folder>-mech-audit.md` per run and prints a
+PASS/FAIL/WARN grid. It catches, automatically: copied summary.csv across runs
+(md5), trial-CSV count vs claimed n_completed (fabrication fingerprint), seed
+formula, `/score` calls from procedures, exact summary columns, eval Gini >0.5
+leak flags, do_not_read / cross-workspace references, and the 2C package
+pitfalls.
+
+Treat FAILs as *flags to inspect*, not verdicts (regexes err strict). Reserve
+LLM auditing for the behavioral residue only (Phase 13 judgments, decision
+rationale), fed with pre-extracted snippets — never whole JSONLs. When LLM
+audits are unavoidable: one subagent at a time, smallest capable model, each
+report written to disk immediately so interrupted work is never lost.
+
 ## 5. Report and stop
 
 After each launch/resume/evaluation cycle, report: what's running, what's complete
 (scored/24), what's stuck and why, and the results grid so far. Then wait for the
 human — do not start new roster entries on your own.
+
+**Report format (per the human's preference):** on every progress check show ONE
+single unified roster table containing ALL runs (one row per entry × run index),
+grouped by run index — the whole run-1 block first, then run-2, etc.
+Keep status cells short — state + numbered marks (e.g. `✅ COMPLETE 24/24 ⚠¹`) —
+and explain every mark as bullet points BELOW the table. Never put long
+explanations inside table cells. Long tables are fine.
