@@ -49,11 +49,62 @@ score on the two decisive cells (each ● = one wiki run)
       → both groups span top-to-bottom. Reading ≠ outcome.
 ```
 
-### How do agents actually use the wiki?
-**They copy the example and ignore the prose.** The cleanest proof: one agent read 49
-pages, *saw* R's warning that its model hadn't converged, *wrote the correct fix in its
-own reasoning* — and still shipped the example's flawed call. Two other agents copied
-the same example so faithfully their failures were **byte-identical to 13 decimals**.
+### How is the agent *supposed* to use the wiki?
+The workspace contract prescribes a four-step loop — orient, target, read, check —
+ending in code that cites its sources:
+
+```
+   ┌──────────────────────────────────────────────────────────────┐
+   │  workspace root: CLAUDE.md (auto-loaded contract)            │
+   │  "You MUST consult the wiki before writing modeling code.    │
+   │   Prefer examples/*.R — copy verbatim, then modify.          │
+   │   Cite every decision as [[PageName]]. Skipping = failure."  │
+   └───────────────────────────────┬──────────────────────────────┘
+                                   ▼
+   │  STEP 1 — ORIENT   index.md (catalog) · overview.md          │
+   │                    (synthesis) · the wiki's own CLAUDE.md    │
+                                   ▼
+   │  STEP 2 — TARGET   grep -rli <every task term> wiki/         │
+                                   ▼
+   ┌──────────────────────────────────────────────────────────────┐
+   │  STEP 3 — READ every match, all three page types             │
+   │   concepts/<Method>.md      sources/<paper>.md               │
+   │   · when to use, hyperparams· canonical API from the paper   │
+   │   · COMMON PITFALLS         · quirks + FAILURE MODES         │
+   │              └──────────┬──────────┘                         │
+   │                         ▼                                    │
+   │             examples/<method>.R                              │
+   │             · verified runnable demo ← the active ingredient │
+   └───────────────────────────────┬──────────────────────────────┘
+                                   ▼
+   │  STEP 4 — before each package call, re-read that page's      │
+   │           Argument Quirks + Failure Modes + Code Example     │
+                                   ▼
+   ┌──────────────────────────────────────────────────────────────┐
+   │  ACT — copy the example verbatim → adapt to this data →      │
+   │        cite [[Pages]] in comments → log reads to trajectory  │
+   └──────────────┬──────────────────────────────┬────────────────┘
+                  ▼                              ▼
+     run R → error? debug from the      wiki had nothing? log it in
+     message + Failure Modes, loop      gaps.md, proceed citing
+     until OK                           "no wiki support"
+```
+
+### …and how do they actually use it?
+**They execute the reading steps, but only the example shapes the code:**
+
+```
+   DESIGNED:  orient → grep → read concepts+sources+examples → check quirks → write
+   OBSERVED:  skim index ─────────────────────► copy examples/<method>.R → ship
+                          (concepts read but not applied; warnings seen but overridden)
+```
+
+The cleanest proof: one agent read 49 pages, *saw* R's warning that its model hadn't
+converged, *wrote the correct fix in its own reasoning* — and still shipped the
+example's flawed call. Two other agents copied the same example so faithfully their
+failures were **byte-identical to 13 decimals**. Reading produces *citations*; the
+example alone produces the *code* — which is why a flaw in `examples/` propagates even
+to agents that read everything, and why fixes placed in explanation prose never landed.
 
 ### How much code decides success?
 **About four tokens.** Two small settings in one model call separate success from
