@@ -127,6 +127,12 @@ rationale), fed with pre-extracted snippets — never whole JSONLs. When LLM
 audits are unavoidable: one subagent at a time, smallest capable model, each
 report written to disk immediately so interrupted work is never lost.
 
+**Default on run completion: script only.** When a run finishes, run
+`mech-audit.py` on that folder and report its grid line — nothing more. No
+LLM-based auditing (subagent or inline transcript analysis) unless the human
+explicitly asks. The script's copy-detection + trial-count checks are the
+standing integrity gate.
+
 ## 5. Report and stop
 
 After each launch/resume/evaluation cycle, report: what's running, what's complete
